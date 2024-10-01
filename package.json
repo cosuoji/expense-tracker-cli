@@ -1,0 +1,21 @@
+{
+  "name": "expense-tracker-cli",
+  "version": "1.0.0",
+  "description": "Command Line Expense Tracker",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "expense-tracker": "bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "ora": "^8.1.0"
+  }
+}
