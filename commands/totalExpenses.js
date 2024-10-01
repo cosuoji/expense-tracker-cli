@@ -1,12 +1,24 @@
 import expenses from "./readFileData.js";
 
-let arr = []
-export const totalExpenses = () =>{
-    expenses.forEach(item=>{
+let finalArr = []
+export const totalExpenses = (arr) =>{
+    arr.forEach(item=>{
         //console.log(item)
        let value =  +item.amount.split("").splice(1).join("")
-       arr.push(value)
+       finalArr.push(value)
         
     })
-    return arr.reduce((acc,curr) => acc + curr)
+    return finalArr.reduce((acc,curr) => acc + curr)
+}
+
+export const monthSummary = (month) =>{
+    if(Number(month) < 10){
+        month = `0${month}`
+    }
+
+    let result = expenses.filter(item=>{
+        return item.date.split("-")[1] === month
+    })
+
+    return totalExpenses(result)
 }
